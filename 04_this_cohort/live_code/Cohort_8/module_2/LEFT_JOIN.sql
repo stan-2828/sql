@@ -14,11 +14,10 @@ FROM product as p
 LEFT JOIN customer_purchases as cp
 	ON p.product_id = cp.product_id
 	
-WHERE cp.product_id IS NULL; -- only shows the product_ids that have been sold 
-
+WHERE cp.product_id IS NULL; -- only shows the product_ids that have been sold
 
 /* 2. Directions of LEFT JOINs matter ...*/
--- this shows only products that have been sold...no products in cp that aren't in product table
+-- this shows only products that have been sold...no products in cp that arent's in product table
 SELECT DISTINCT
 p.product_id,
 cp.product_id as [cp.product_id],
@@ -31,16 +30,17 @@ LEFT JOIN product as p
 
 
 /* 3. As do which values you filter on ... */
-SELECT DISTINCT 
-pc.product_category_id
-,p.product_category_id as [product_product_category_id]
+SELECT DISTINCT
+pc.product_category_id,
+p.product_category_id as [product_product_category_id]
 
 FROM product_category as pc
 LEFT JOIN product as p
 	ON pc.product_category_id = p.product_category_id
-
+	
 --WHERE pc.product_category_id BETWEEN 1 AND 6 -- 6 rows
-WHERE p.product_category_id BETWEEN 1 AND 6 -- 5 rows
+WHERE p.product_category_id BETWEEN 1 AND 6; -- 5 rows
+
 
 
 /* 4. Without using a RIGHT JOIN, make this query return the RIGHT JOIN result set
@@ -61,4 +61,5 @@ FROM product AS p
 LEFT JOIN product_category AS pc
 	ON pc.product_category_id = p.product_category_id
 	ORDER by pc.product_category_id
+
 
