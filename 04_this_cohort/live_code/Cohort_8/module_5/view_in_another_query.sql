@@ -9,10 +9,10 @@ market_year
 ,vendor_name
 ,SUM(sales) as sales
 
-
 FROM vendor_daily_sales
 
-GROUP BY
+GROUP BY 
 market_date
 ,market_week
 ,vendor_name
+

@@ -14,7 +14,10 @@ VALUES('small'),
 
 SELECT * FROM TEMP.sizes;
 
-SELECT product_name, size
-FROM product
-CROS JOIN temp.sizes
+
+SELECT product_id, product_name, size
+FROM temp.sizes
+CROSS JOIN product
+
+
 

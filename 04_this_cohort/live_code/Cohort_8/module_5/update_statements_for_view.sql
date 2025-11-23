@@ -1,4 +1,4 @@
-  /* MODULE 5 */
+/* MODULE 5 */
 /* UPDATE statements for view */
 
 

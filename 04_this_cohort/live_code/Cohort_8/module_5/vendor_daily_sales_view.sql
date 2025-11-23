@@ -22,5 +22,6 @@ CREATE VIEW IF NOT EXISTS vendor_daily_sales AS
 		ON cp.vendor_id = v.vendor_id
 		
 	GROUP BY cp.market_date, v.vendor_id;
-
+	
 SELECT * FROM vendor_daily_sales
+
