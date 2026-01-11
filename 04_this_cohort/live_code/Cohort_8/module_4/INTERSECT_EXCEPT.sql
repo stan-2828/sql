@@ -41,3 +41,6 @@ WHERE product_id IN (
 	SELECT product_id
 	FROM customer_purchases
 )
+
+
+
