@@ -39,5 +39,3 @@ market_year
 FROM vendor_daily_sales
 
 GROUP BY market_year, market_week, vendor_name
-
-

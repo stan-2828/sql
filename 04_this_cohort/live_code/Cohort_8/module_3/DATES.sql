@@ -1,3 +1,4 @@
+
 /* MODULE 3 */
 /* Date functions */
 
@@ -31,5 +32,4 @@ DATE('now') as [now]
  ,(julianday('now') - julianday(market_date)) * 24 as now_md_dd_hours
 
  FROM market_date_info
- 
  

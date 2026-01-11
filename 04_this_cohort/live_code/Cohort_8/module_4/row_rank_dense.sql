@@ -23,23 +23,11 @@ VALUES
 (7, 230000),
 (8, 100000),
 (9, 165000),
-(10, 100000),
-(11, 90000);
+(10, 100000);
 
 SELECT *
-,ROW_NUMBER() OVER(ORDER BY salary desc) as [row_number]
-,RANK() OVER(ORDER BY salary desc) as [rank]
-,DENSE_RANK() OVER(ORDER BY salary desc) as [dense_rank]
+,ROW_NUMBER() OVER(ORDER BY salary DESC) as [row_number]
+,RANK() OVER(ORDER BY salary DESC) as [rank]
+,DENSE_RANK() OVER(ORDER BY salary DESC) as [dense_rank]
 
 FROM row_rank_dense
-
-
-
-
-
-
-
-
-
-
-

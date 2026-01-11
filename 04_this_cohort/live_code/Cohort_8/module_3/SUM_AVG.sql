@@ -23,5 +23,4 @@ FROM customer_purchases as cp
 INNER JOIN customer as c
 	ON c.customer_id = cp.customer_id
 
-GROUP BY c.customer_id -- this represents the single row that customer_first and customer_last_name are using
-
+GROUP BY c.customer_id -- this represents the single row that customer_first and Customer_last_name are using

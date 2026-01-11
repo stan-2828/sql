@@ -2,16 +2,16 @@
 /* Multiple Table JOINs */
 
 
-/* 1. Using the Query #5 from DISTINCT earlier 
+/* 1. Using the Query #4 from DISTINCT earlier 
     (Which vendor has sold products to a customer AND which product was it AND to whom was it sold)
 
     Replace all the IDs (customer, vendor, and product) with the names instead*/ 
+
 SELECT DISTINCT 
 --vendor_id, 
 vendor_name,
 --product_id, 
-product_name,
---customer_id
+--customer_id,
 customer_first_name,
 customer_last_name
 
@@ -24,24 +24,16 @@ INNER JOIN customer as c
 	ON c.customer_id = cp.customer_id;
 
 
-
 /* 2. Select product_category_name, everything from the product table, and then LEFT JOIN the customer_purchases table
 ... how does this LEFT JOIN affect the number of rows? 
 
 Why do we have more rows now?*/
-SELECT 
-product_category_name
+SELECT product_category_name
 ,p.*
 ,cp.product_id as [cp.product_id]
 
 FROM product_category as pc
 INNER JOIN product as p
 	ON p.product_category_id = pc.product_category_id
-LEFT JOIN customer_purchases as cp -- inner join is 4221, but left join adds 15 rows (4236 rows) for unsold products
+LEFT JOIN customer_purchases as cp
 	ON cp.product_id = p.product_id
-	
-ORDER BY cp.product_id
-
-
-
-
