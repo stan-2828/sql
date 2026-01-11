@@ -6,7 +6,7 @@
 SELECT
 market_date
 ,customer_id
-,SUM(quantity*cost_to_customer_per_qty)
+,SUM(quantity*cost_to_customer_per_qty) as total_cost
 
 FROM customer_purchases
 GROUP BY market_date, customer_id;
@@ -16,6 +16,7 @@ GROUP BY market_date, customer_id;
 SELECT 
 customer_first_name
 ,customer_last_name
+,customer_postal_code
 ,ROUND(AVG(quantity*cost_to_customer_per_qty),2) as total_cost
 
 FROM customer_purchases as cp
